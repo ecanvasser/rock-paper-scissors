@@ -9,10 +9,28 @@
 <body>
     <script>
         function computerPlay() {
-            let choices = ['rock', 'paper', 'scissors'];
+            let choices = ['rock', 'paper', 'scissor'];
             let finalChoice = choices[Math.floor(Math.random() * 3)];
             return finalChoice
         };
+
+        function playRound(playerSelection, computerSelection) {
+            
+            let playerDisplayValue = playerSelection[0].toUpperCase() + playerSelection.slice(1,);
+
+            if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
+                return 'You lose! Paper beats rock'
+            } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissor') {
+                return 'You lose! Scissors beat paper'
+            } else if (playerSelection.toLowerCase() === 'scissor' && computerSelection === 'rock') {
+                return 'You lose! Rock beats scissor'
+            } else if (playerSelection.toLowerCase() === computerSelection) {
+                return 'Tie!'
+            } else {
+                return `You win! ${playerDisplayValue} beats ${computerSelection}`
+            }
+        }
+
     </script>
 </body>
 </html>
