@@ -19,15 +19,15 @@
             let playerDisplayValue = playerSelection[0].toUpperCase() + playerSelection.slice(1,);
 
             if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
-                return 'You lose! Paper beats rock'
+                return 'You lost this round! Paper beats rock'
             } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissor') {
-                return 'You lose! Scissors beat paper'
+                return 'You lost this round! Scissors beat paper'
             } else if (playerSelection.toLowerCase() === 'scissor' && computerSelection === 'rock') {
-                return 'You lose! Rock beats scissor'
+                return 'You lost this round! Rock beats scissor'
             } else if (playerSelection.toLowerCase() === computerSelection) {
                 return 'Tie!'
             } else {
-                return `You win! ${playerDisplayValue} beats ${computerSelection}`
+                return `Winner winner chicken dinner! ${playerDisplayValue} beats ${computerSelection}`
             }
         }
 
@@ -36,25 +36,31 @@
             let computerScore = 0;
 
             for (let i = 0; i < 5; i++) {
-                let result = playRound('rock', computerPlay());
+                let result = playRound(prompt('Rock, paper, or scissor?'), computerPlay());
                 // need to replace 'rock' with prompt input
                 if (result.includes('win')) {
-                    userScore++
+                    alert(`Round ${i + 1}: ` + result);
+                    userScore++;
                 } else if (result.includes('Tie')) {
-                    userScore += 0
+                    alert(`Round ${i + 1}: ` + result);
+                    userScore += 0;
+                    computerScore += 0;
                 } else {
-                    computerScore++
+                    alert(`Round ${i + 1}: ` + result);
+                    computerScore++;
                 }
             }
 
             if (userScore > computerScore) {
-                return 'Congrats! You win'
+                return alert('Congrats! You win');
             } else if (userScore === computerScore) {
-                return 'It\'s a tie!'
+                return alert('It\'s a tie!');
             } else {
-                return 'Rats! You lost'
+                return alert('Rats! You lost');
             }
         }
+
+        game();
 
     </script>
 </body>
