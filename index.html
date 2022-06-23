@@ -31,6 +31,31 @@
             }
         }
 
+        function game() {
+            let userScore = 0;
+            let computerScore = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let result = playRound('rock', computerPlay());
+                // need to replace 'rock' with prompt input
+                if (result.includes('win')) {
+                    userScore++
+                } else if (result.includes('Tie')) {
+                    userScore += 0
+                } else {
+                    computerScore++
+                }
+            }
+
+            if (userScore > computerScore) {
+                return 'Congrats! You win'
+            } else if (userScore === computerScore) {
+                return 'It\'s a tie!'
+            } else {
+                return 'Rats! You lost'
+            }
+        }
+
     </script>
 </body>
 </html>
