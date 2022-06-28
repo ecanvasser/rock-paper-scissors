@@ -27,32 +27,30 @@ function game(choice) {
     
     if (result.includes('win')) {
         alert(result);
-        +userScore++
+        userScore.innerHTML++
         console.log(userScore)
     } else if (result.includes('Tie')) {
         alert(result);
-        console.log(userScore, computerScore)
     } else {
         alert(result);
-        +computerScore++
-        console.log(computerScore)
+        computerScore.innerHTML++
     };
 
-    if (userScore == 5) {
-        userScore = 0;
-        computerScore = 0;
+    if (userScore.innerHTML == 5) {
+        userScore.innerHTML = 0;
+        computerScore.innerHTML = 0;
         return alert('Congrats! You win');
-    } else if (computerScore == 5) {
-        userScore = 0;
-        computerScore = 0;
+    } else if (computerScore.innerHTML == 5) {
+        userScore.innerHTML = 0;
+        computerScore.innerHTML = 0;
         return alert('Rats! You lost');
     }
 };
 
-let userScore = document.querySelector('.playerScore').textContent;
-userScore = 0;
-let computerScore = document.querySelector('.compScore').textContent;
-computerScore = 0;
+let userScore = document.querySelector('.playerScore');
+userScore.innerHTML = 0;
+let computerScore = document.querySelector('.compScore');
+computerScore.innerHTML = 0;
 
 let rockBtn = document.querySelector('.rock');
 rockBtn.addEventListener('click', function(e) {
