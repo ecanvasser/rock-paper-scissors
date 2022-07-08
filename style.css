@@ -1,9 +1,17 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: aquamarine;
+}
+
+.game-log {
+    padding-bottom: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .title {
