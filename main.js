@@ -39,11 +39,11 @@ function game(choice) {
     if (userScore.innerHTML == 5) {
         userScore.innerHTML = 0;
         computerScore.innerHTML = 0;
-        gameLog.innerHTML = 'Congrats! You win';
+        gameLog.innerHTML = 'Congrats! You win. Click a button to start a new game';
     } else if (computerScore.innerHTML == 5) {
         userScore.innerHTML = 0;
         computerScore.innerHTML = 0;
-        gameLog.innerHTML = 'Rats! You lost';
+        gameLog.innerHTML = 'Rats! You lost.  Click a button to start a new game';
     }
 };
 
